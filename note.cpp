@@ -60,6 +60,11 @@ void Note::revokeFrom(string user) {
     }
 }
 
+// ---------------- Equality ----------------
+bool Note::operator==(Note& other) {
+    return id == other.id;
+}
+
 // ---------------- Show ----------------
 void Note::show() {
     cout << "\n[" << id << "] " << title << endl;
