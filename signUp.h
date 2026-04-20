@@ -14,5 +14,6 @@ void setpassWord(string);
 string getUser();
 string getPass();
 void createFolder();
+void show();
 };
 #endif
