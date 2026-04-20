@@ -1,5 +1,7 @@
 #include<iostream>
 #include<fstream>
+#include<direct.h>
+#include<dirent.h>
 #include"signUp.h"
 using namespace std;
 signUp::signUp():userName(""),password(""){}
@@ -17,8 +19,11 @@ string signUp::getPass(){
     return password;
 }
 void signUp::createFolder(){
-    string fileUsename;
-    string filePassword;
+    mkdir(userName.c_str());
+}
+void signUp::checkU(){
+    string fileUsename="";
+    string filePassword="";
     cout<<"Enter Username: ";
     cin>>userName;
     cout<<"Enter password: ";
@@ -27,7 +32,7 @@ void signUp::createFolder(){
     ofstream fout;
     ifstream fin;
     fin.open("login.txt");
-    while(!fin.eof()){
+    while(fin>>fileUsename>>filePassword){
         if(fileUsename==userName){
 found=1;
 break;
@@ -42,7 +47,10 @@ cout<<"Username already exists"<<endl;
         fout.open("login.txt",ios::app);
         fout<<userName<<" "<<password<<endl;
         fout.close();
+        createFolder();
     }
-    cout<<"hi";
+
 
 }
+
+

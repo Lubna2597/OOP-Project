@@ -1,8 +1,11 @@
-#ifndef SignUp_H
-#define SignUP_H
+#ifndef SIGNUP_H
+#define SIGNUP_H
 #include<string>
 #include<fstream>
+#include<direct.h>
+#include<dirent.h>
 using namespace std;
+
 class signUp{
 string userName;
 string password;
@@ -13,7 +16,7 @@ void setUser(string);
 void setpassWord(string);
 string getUser();
 string getPass();
+void checkU();
 void createFolder();
-void show();
 };
 #endif
