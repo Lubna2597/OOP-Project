@@ -20,6 +20,9 @@ string signUp::getPass(){
 }
 void signUp::createFolder(){
     mkdir(userName.c_str());
+    string filePath = userName + "/.gitkeep";
+    ofstream f(filePath);
+    f.close();
 }
 void signUp::checkU(){
     string fileUsename="";
