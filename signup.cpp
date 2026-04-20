@@ -24,6 +24,12 @@ void signUp::createFolder(){
     string filePath = "users/"+userName + "/.gitkeep";
     ofstream f(filePath);
     f.close();
+    string pathfr="users/"+userName+"/friend Request.txt";
+    ofstream friendRequest(pathfr);
+    string pathfl="users/"+userName+"/friend List.txt";
+    ofstream friendlist(pathfl);
+    string pathfm="users/"+userName+"/friend Message.txt";
+    ofstream messages(pathfm);
 }
 void signUp::checkU(){
     string fileUsename="";
