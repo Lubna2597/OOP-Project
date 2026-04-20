@@ -19,8 +19,9 @@ string signUp::getPass(){
     return password;
 }
 void signUp::createFolder(){
-    mkdir(userName.c_str());
-    string filePath = userName + "/.gitkeep";
+    string path="users/"+userName;
+    mkdir(path.c_str());
+    string filePath = "users/"+userName + "/.gitkeep";
     ofstream f(filePath);
     f.close();
 }
