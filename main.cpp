@@ -20,7 +20,7 @@ case 0:
 SIGNUP.checkU();
 case 1:
 LOGIN.loginCheck();
-if(LOGIN.isLoggedIn()){
+if(LOGIN.isLoggedIn())
 {cout<<"\nLoading ";
 for(int i=0;i<6;i++){
     cout<<".";
@@ -66,7 +66,6 @@ NoteList NOTELIST(signUp::getUser());
         }while(noteOpt!=0);
     break;}
     case 2:
-<<<<<<< HEAD
    { 
     Audiobook book;
     int opt;
@@ -86,10 +85,6 @@ while(opt!=0);
    
 
     break;}
-=======
-    ////PENDING
-   { break;}
->>>>>>> bfe682c77504afa3381ed7f795fbd8ce5bbeb3dc
     case 3: 
     {Todo TODO;
     TodoList TODOLIST(signUp::getUser());
