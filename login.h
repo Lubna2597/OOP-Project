@@ -24,3 +24,4 @@ void logout();
 bool isLoggedIn();
 };
 #endif
+

@@ -18,7 +18,6 @@ int main(){
    switch(choose){
 case 0:
 SIGNUP.checkU();
-break;
 case 1:
 LOGIN.loginCheck();
 if(LOGIN.isLoggedIn()){
@@ -65,10 +64,8 @@ NoteList NOTELIST(signUp::getCurrentUser());
         }while(noteOpt!=0);
     break;}
     case 2:
-   { 
-    Audiobook book;
-    book.speak();
-    break;}
+    ////PENDING
+   { break;}
     case 3: 
     {Todo TODO;
     TodoList TODOLIST(signUp::getCurrentUser());
