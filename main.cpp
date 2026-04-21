@@ -18,6 +18,7 @@ int main(){
    switch(choose){
 case 0:
 SIGNUP.checkU();
+break;
 case 1:
 LOGIN.loginCheck();
 if(LOGIN.isLoggedIn()){
