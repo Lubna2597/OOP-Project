@@ -10,7 +10,7 @@ using namespace std;
 class friendGroup{
 vector<string>f;
 public:
-friendGroup(){}
+friendGroup();
 void sendRequest();
 void acceptRequest();
 void viewFriendList();

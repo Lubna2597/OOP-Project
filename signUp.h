@@ -12,7 +12,7 @@ string password;
 public:
 signUp();
 signUp(string,string );
-void setUser(string);
+static void setUser(string);
 void setpassWord(string);
 static string getUser();
 string getPass();

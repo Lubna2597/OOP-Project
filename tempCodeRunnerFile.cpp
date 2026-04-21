@@ -15,9 +15,9 @@ int main(){
     cout<<"Enter 0 to login and 1 to signup: ";
     cin>>choose;
    switch(choose){
-case 1:
+case 0:
 SIGNUP.checkU();
-case 2:
+case 1:
 LOGIN.loginCheck();
 cout<<"\nLoading ";
 for(int i=0;i<6;i++){

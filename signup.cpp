@@ -4,6 +4,8 @@
 #include<dirent.h>
 #include"signUp.h"
 using namespace std;
+string signUp::userName = "";
+
 signUp::signUp():password(""){}
 signUp::signUp(string u,string p):password(p){}
 void signUp::setUser(string n){
@@ -21,9 +23,9 @@ string signUp::getPass(){
 void signUp::createFolder(){
     string path="users/"+userName;
     mkdir(path.c_str());
-    string filePath = "users/"+userName + "/.gitkeep";
-    ofstream f(filePath);
-    f.close();
+    // string filePath = "users/"+userName + "/.gitkeep";
+    // ofstream f(filePath);
+    // f.close();
     string pathfr="users/"+userName+"/friendRequest.txt";
     ofstream friendRequest(pathfr);
     string pathfl="users/"+userName+"/friendList.txt";
@@ -58,6 +60,7 @@ cout<<"Username already exists"<<endl;
         fout<<userName<<" "<<password<<endl;
         fout.close();
         createFolder();
+        cout<<"====Account Created Successfully====="<<endl;
     }
 
 

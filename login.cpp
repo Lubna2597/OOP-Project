@@ -3,15 +3,12 @@
 #include<direct.h>
 #include<dirent.h>
 #include"login.h"
+#include"signUp.h"
 using namespace std;
-login::login():userName(""),password(""),dir(NULL){}
+login::login():userName(""),password(""),dir(NULL),loggedIn(false){}
 login::login(string u,string p):userName(u),password(p){}
-void login::setU(string n){
-userName=n;
-}
-void login::setpass(string n){
-password=n;
-}
+void login::setU(string n){userName=n;}
+void login::setpass(string n){password=n;}
 string login::getU(){
     return userName;
 }
@@ -47,19 +44,25 @@ break;
    
     }
     fin.close();
+//cout << "DEBUG: found=" << found << " filePass='" << filePassword << "' inputPass='" << password << "'" << endl;
+
     if(found){
       if(filePassword==password)
 {cout<<"Login successfull"<<endl;
+    signUp::setUser(userName);
 openFolder();
+loggedIn=true;
 }
 else{
     cout<<"Wrong Password"<<endl;
+    loggedIn=false;
+    return;
 }
 
     }
     else{
 cout<<"Unable to find username"<<endl;
-        
+        loggedIn=false;
     }
 
 
@@ -69,6 +72,11 @@ void login::logout(){
         closedir(dir);
         dir=NULL;
         cout<<"Logged out successfully"<<endl;
+        loggedIn=false;
     }
+ 
 }
+   bool login::isLoggedIn(){
+    return loggedIn;
+   }
 

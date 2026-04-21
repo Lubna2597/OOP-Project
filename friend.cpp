@@ -28,8 +28,8 @@ count++;
         {
             if(availPeople[i]==f[j]){found=1; break;}
         }
-if(!found){
-    cout<<availPeople[i];
+if(!found &&availPeople[i]!=signUp::getUser()){
+    cout<<availPeople[i]<<endl;
 }
 }
 string name;
@@ -93,6 +93,20 @@ for(int i=0;i<count;i++){
        else{
         cout<<"Error"<<endl;
        }
+ofstream rewrite(rePath);
+if(rewrite.is_open()){
+    for(int j=0;j<count;j++){
+        if(fr[j]!=nameU){
+            rewrite<<fr[j]<<endl;
+        }
+    }
+    rewrite.close();
+}
+
+
+
+
+
        break; // if error check here
 
     }
@@ -114,12 +128,48 @@ void friendGroup::message(){
 cout<<"-----------WELCONE TO  CHAT SECTION---------------"<<endl;
 cout<<"=====Your Friends are====="<<endl;
 viewFriendList();
+if(f.size()==0){
+    cout<<"You have no friends yet!"<<endl;
+    return;
+}
 cout<<"------------------------------"<<endl;
 string n;
 cout<<"Write name of user to start conversation: ";
 cin>>n;
-for(int i=0;i<f.size();i++){
-    if(f[i]==n){
+// for(int i=0;i<f.size();i++){
+//     if(f[i]==n){
+//         ofstream typeM("friendMessage.txt",ios::ate);
+//         cout<<"Message from: "<<signUp::getUser()<<endl;
+//         string n;
+//         typeM<<n;
+//         typeM.close();
+//     }
+// }
+cout<<"=========Previous Messages=========="<<endl;
+ifstream readOld("friendMessage.txt");
+string line;
+while(getline(readOld,line)){
+    if((line.find(signUp::getUser()) !=string::npos)&&(line.find(n)!=string::npos)){
+cout<<line<<endl;
     }
 }
+readOld.close();
+cout<<"============================"<<endl;
+cout<<"\n========== Send Message========"<<endl;
+string msg;
+cout<<"Enter message(or 'exit' to quit): ";
+cin.ignore();
+getline(cin,msg);
+if(msg=="exit"){return;}
+ofstream typeM("friendMessage.txt",ios::app);
+if(typeM.is_open()){
+    typeM<<signUp::getUser()<<"->"<<n<<": "<<msg
+<<endl;
+typeM.close();
+cout<<"Message sent!"<<endl;
+}
+else{
+    cout<<"Message failed"<<endl;
+}
+
 }

@@ -10,6 +10,7 @@ class login{
 string userName;
 string password;
 DIR *dir;
+bool loggedIn;
 public:
 login();
 login(string,string );
@@ -20,5 +21,6 @@ string getP();
 void loginCheck();
 void openFolder();
 void logout();
+bool isLoggedIn();
 };
 #endif
