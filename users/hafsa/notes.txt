@@ -1,1 +1,1 @@
-1|PLANTS|Botany|hafsa|0|plant save the planet earth END\n
+1|PLANT|Botany|hafsa|0|plants save planet earth by absorbing carbondioxide and releasing oxygen\n

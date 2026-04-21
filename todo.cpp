@@ -48,17 +48,17 @@ void Todo::fromLine(string line) {
             tok += line[i];
         }
     }
-    id       = stoi(parts[0]);
-    task     = parts[1];
-    done     = (parts[2] == "1");
+    id = stoi(parts[0]);
+    task = parts[1];
+    done= (parts[2] == "1");
     priority = parts[3];
 }
 
 // ========================== TodoList ==========================
 
 TodoList::TodoList(string o) {
-    owner  = o;
-    count  = 0;
+    owner = o;
+    count = 0;
     nextId = 1;
     load();
 }
