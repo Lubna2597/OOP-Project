@@ -6,16 +6,25 @@
 #include"friend.h"
 using namespace std;
 
-friendGroup::friendGroup(){}
+friendGroup::friendGroup(){
+ string path = "users/" + signUp::getUser() + "/friendList.txt";
+    ifstream fin(path);
+    string name;
+    while(fin >> name) {
+        f.push_back(name);
+    }
+    fin.close();
+}
 void friendGroup::sendRequest(){
     vector<string>availPeople;
     //ofstream fout("login.txt");
 ifstream fin("login.txt");
 string fileUsername="";
 int count =0;
+ string temp;
     while(fin>>fileUsername){
 //fin>>availPeople[count++];
- string temp;
+
  fin>>temp;
 availPeople.push_back(fileUsername);
 count++;
@@ -37,13 +46,17 @@ cout<<"Enter name of user to send friend request: ";
 cin>>name;
 for(int i=0;i<count;i++){
     if(name==availPeople[i]){
+    
         ofstream send;
-        string path=availPeople[i]+"/friendRequest.txt";
+        string path="users/"+availPeople[i]+"/friendRequest.txt";
         send.open(path,ios::app);
         if(send.is_open())
 {       send<<signUp::getUser()<<endl;
-       send.close();}
+       send.close();
+    cout<<"Request Sent"<<endl;
+    }
        else{
+        cout<<"Could not open path: "<<path<<endl;
         cout<<"Could not send request"<<endl;
        }
        break;
@@ -54,7 +67,7 @@ void friendGroup::acceptRequest(){
     string friendRequest="";
     vector<string>fr;
     int count =0;
-    string rePath=signUp::getUser()+"/friendRequest.txt";
+    string rePath="users/"+ signUp::getUser()+"/friendRequest.txt";
     ifstream accept(rePath);
     while(accept>>friendRequest)
 {
@@ -74,16 +87,17 @@ for(int i=0;i<count;i++){
     if(nameU==fr[i]){
         found=1;
         f.push_back(fr[i]);
-        string myListPath=signUp::getUser()+"/friendList.txt";
+        string myListPath="users/"+ signUp::getUser()+"/friendList.txt";
         ofstream officialFriend(myListPath,ios::app);
         if(officialFriend.is_open())
  {       officialFriend<<fr[i]<<endl;
         officialFriend.close();
-        string path=fr[i]+"/friendList.txt";
-        ofstream addToOtherList(path,ios::app);
+        string OtherListpath="users/"+  fr[i]+"/friendList.txt";
+        ofstream addToOtherList(OtherListpath,ios::app);
         if(addToOtherList.is_open())
      {   addToOtherList<<signUp::getUser()<<endl;
         addToOtherList.close();
+
      cout<<"Now you Both are friends"<<endl;
     }
     else{
@@ -119,6 +133,7 @@ if(!found){
 }
 void friendGroup::viewFriendList(){
     cout<<"=====MY FRIENDLIST======="<<endl;
+    
     for(int i=0;i<f.size();i++){
         cout<<f[i]<<endl;
     }
@@ -145,11 +160,20 @@ cin>>n;
 //         typeM.close();
 //     }
 // }
+    int isFriend = 0;
+    for(int i = 0; i < f.size(); i++) {
+        if(f[i] == n) { isFriend = 1; break; }
+    }
+    if(!isFriend) {
+        cout << "This user is not your friend!" << endl;
+        return;
+    }
+string myMsgPath="users/"+signUp::getUser()+"/messages.txt";
 cout<<"=========Previous Messages=========="<<endl;
-ifstream readOld("friendMessage.txt");
+ifstream readOld(myMsgPath);
 string line;
 while(getline(readOld,line)){
-    if((line.find(signUp::getUser()) !=string::npos)&&(line.find(n)!=string::npos)){
+    if((line.find(n)!=string::npos)){
 cout<<line<<endl;
     }
 }
@@ -161,15 +185,29 @@ cout<<"Enter message(or 'exit' to quit): ";
 cin.ignore();
 getline(cin,msg);
 if(msg=="exit"){return;}
-ofstream typeM("friendMessage.txt",ios::app);
-if(typeM.is_open()){
-    typeM<<signUp::getUser()<<"->"<<n<<": "<<msg
-<<endl;
-typeM.close();
-cout<<"Message sent!"<<endl;
-}
-else{
-    cout<<"Message failed"<<endl;
+string formatted=signUp::getUser()+"->"+n+": "+msg;
+
+    ofstream senderFile("users/"+signUp::getUser()+"/messages.txt", ios::app);
+    if(senderFile.is_open()){
+        senderFile<<formatted<<endl;
+        senderFile.close();
+    } else {
+        cout<<"Failed to save to your message file"<<endl;
+    }
+
+    // Write to receiver's file
+    ofstream receiverFile("users/"+n+"/messages.txt", ios::app);
+    if(receiverFile.is_open()){
+        receiverFile<<formatted<<endl;
+        receiverFile.close();
+        cout<<"Message sent!"<<endl;
+    } else {
+        cout<<"Failed to save to receiver's message file"<<endl;
+    }
 }
 
-}
+
+
+
+
+
