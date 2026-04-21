@@ -29,14 +29,14 @@ for(int i=0;i<6;i++){
 cout<<endl;
 
                                     ////AFTER LOGIN
-cout<<"========WELCOME TO NOTIFY: "<<signUp::getCurrentUser()<<"========="<<endl;
+cout<<"========WELCOME TO NOTIFY: "<<signUp::getUser()<<"========="<<endl;
 int options;
 cout<<"CHOOSE:\n 1: Making Notes\n 2: AudioBook\n 3: TODO-LIST\n 4: Social Networks"<<endl;
 cin>>options;
 switch(options){
     case 1:
     {Note NOTES;
-NoteList NOTELIST(signUp::getCurrentUser());
+NoteList NOTELIST(signUp::getUser());
  int noteOpt;
         do{
             cout<<"\n--- NOTES MENU ---\n";
@@ -68,7 +68,7 @@ NoteList NOTELIST(signUp::getCurrentUser());
    { break;}
     case 3: 
     {Todo TODO;
-    TodoList TODOLIST(signUp::getCurrentUser());
+    TodoList TODOLIST(signUp::getUser());
     int todoOpt;
         do{
             cout<<"\n--- TODO MENU ---\n";
