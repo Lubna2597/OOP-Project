@@ -4,15 +4,15 @@
 #include<dirent.h>
 #include"signUp.h"
 using namespace std;
-signUp::signUp():userName(""),password(""){}
-signUp::signUp(string u,string p):userName(u),password(p){}
+signUp::signUp():password(""){}
+signUp::signUp(string u,string p):password(p){}
 void signUp::setUser(string n){
 userName=n;
 }
 void signUp::setpassWord(string n){
 password=n;
 }
-string signUp::getUser(){
+string signUp::  getUser(){
     return userName;
 }
 string signUp::getPass(){
@@ -24,11 +24,11 @@ void signUp::createFolder(){
     string filePath = "users/"+userName + "/.gitkeep";
     ofstream f(filePath);
     f.close();
-    string pathfr="users/"+userName+"/friend Request.txt";
+    string pathfr="users/"+userName+"/friendRequest.txt";
     ofstream friendRequest(pathfr);
-    string pathfl="users/"+userName+"/friend List.txt";
+    string pathfl="users/"+userName+"/friendList.txt";
     ofstream friendlist(pathfl);
-    string pathfm="users/"+userName+"/friend Message.txt";
+    string pathfm="users/"+userName+"/friendMessage.txt";
     ofstream messages(pathfm);
 }
 void signUp::checkU(){

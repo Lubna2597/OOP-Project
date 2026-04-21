@@ -5,6 +5,7 @@
 #include<dirent.h>
 #include<vector>
 #include<fstream>
+#include"signUp.h"
 using namespace std;
 class friendGroup{
 vector<string>f;
