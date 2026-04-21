@@ -6,6 +6,7 @@
 #include"signUp.h"
 #include"todo.h"
 #include"note.h"
+#include"audioBook.h"
 using namespace std;
 int main(){
     signUp SIGNUP;
@@ -63,8 +64,10 @@ NoteList NOTELIST(signUp::getCurrentUser());
         }while(noteOpt!=0);
     break;}
     case 2:
-    ////PENDING
-   { break;}
+   { 
+    Audiobook book;
+    book.speak();
+    break;}
     case 3: 
     {Todo TODO;
     TodoList TODOLIST(signUp::getCurrentUser());
