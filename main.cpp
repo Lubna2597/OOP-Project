@@ -31,7 +31,9 @@ cout<<endl;
                                     ////AFTER LOGIN
 cout<<"========WELCOME TO NOTIFY: "<<signUp::getUser()<<"========="<<endl;
 int options;
-cout<<"CHOOSE:\n 1: Making Notes\n 2: AudioBook\n 3: TODO-LIST\n 4: Social Networks"<<endl;
+do
+{
+cout<<"CHOOSE:\n 1: Making Notes\n 2: AudioBook\n 3: TODO-LIST\n 4: Social Networks\n 5:End"<<endl;
 cin>>options;
 switch(options){
     case 1:
@@ -66,7 +68,22 @@ NoteList NOTELIST(signUp::getUser());
     case 2:
    { 
     Audiobook book;
-    book.speak();
+    int opt;
+    do
+{
+cout<<"Enter 1: for notes audio and 0 for exit";
+cin>>opt;
+switch(opt){
+    case 1:
+ book.speak();
+ break;
+ case 0:
+    break;
+ 
+}}
+while(opt!=0);
+   
+
     break;}
     case 3: 
     {Todo TODO;
@@ -150,12 +167,19 @@ NoteList NOTELIST(signUp::getUser());
             }
         }while(friendOpt!=0);
         break;}
-    }
+        case 5:{
+            break;
+        }
+    
 }
-
+}
+while(options!=5);
 }
 else{
     return 1;
 }
 }
 
+
+
+}
