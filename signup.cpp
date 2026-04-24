@@ -2,6 +2,7 @@
 #include<fstream>
 #include<direct.h>
 #include<dirent.h>
+#include<stdexcept>
 #include"signUp.h"
 using namespace std;
 string signUp::userName = "";
@@ -9,9 +10,12 @@ string signUp::userName = "";
 signUp::signUp():password(""){}
 signUp::signUp(string u,string p):password(p){}
 void signUp::setUser(string n){
+    if(n.empty())throw invalid_argument("Username cannot be empty.");
 userName=n;
 }
 void signUp::setpassWord(string n){
+    if(n.empty()) throw invalid_argument("Password cannot be empty.");
+    
 password=n;
 }
 string signUp::  getUser(){
