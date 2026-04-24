@@ -48,9 +48,9 @@ void Todo::fromLine(string line) {
             tok += line[i];
         }
     }
-    id = stoi(parts[0]);
+    id   = stoi(parts[0]);
     task = parts[1];
-    done= (parts[2] == "1");
+    done = (parts[2] == "1");
     priority = parts[3];
 }
 
