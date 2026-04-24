@@ -4,3 +4,4 @@ Alex->Lubna: Hi
 Lubna->Alex: Hi
 Lubna->Jamal: Hi
 Jamal->Lubna: hi
+Lubna->Jamal: How are you
