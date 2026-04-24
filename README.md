@@ -65,174 +65,173 @@ All data is persisted using ifstream/ofstream.
 ## Use case:
 Each user's data is isolated in their own users/<username>/ folder. The only shared resource is login.txt, which holds credentials for all registered accounts.
 ### use case 1 (signup and creates notes):
-Enter 1 to login and 0 to signup: 0\
-Enter Username: ali\
-Enter Password: ali123\
-====Account Created Successfully=====\
-Enter Username: ali\
-Enter Password: ali123\
-Login Successful!\
-Loading ......\
-========WELCOME TO NOTIFY: ali=========\
-Choice: 1   [Making Notes]\
-Choice: 1   [Add Note]\
-Enter title: OOP Summary\
-Enter subject: Computer Science\
-Enter body (END to finish):\
-Inheritance allows a class to derive from another.\
-Polymorphism lets one interface represent many types.\
-END\
-Note added!\
+Enter 1 to login and 0 to signup: 0
+Enter Username: ali
+Enter Password: ali123
+====Account Created Successfully=====
+Enter Username: ali
+Enter Password: ali123
+Login Successful!
+Loading ......
+========WELCOME TO NOTIFY: ali========
+Choice: 1   [Making Notes]
+Choice: 1   [Add Note]
+Enter title: OOP Summary
+Enter subject: Computer Science
+Enter body (END to finish):
+Inheritance allows a class to derive from another.
+Polymorphism lets one interface represent many types.
+END
+Note added!
 
-Choice: 1   [Add Note]\
-Enter title: Math Formulas\
-Enter subject: Mathematics\
-Enter body (END to finish):\
-Quadratic formula: x = (-b +- sqrt(b2-4ac)) / 2a\
-END\
-Note added!\
+Choice: 1   [Add Note
+Enter title: Math Formulas
+Enter subject: Mathematics
+Enter body (END to finish):
+Quadratic formula: x = (-b +- sqrt(b2-4ac)) / 2a
+END
+Note added!
 
-Choice: 2   [View All Notes]\
+Choice: 2   [View All Notes]
 
-[1] OOP Summary\
-Subject: Computer Science\
-Owner  : ali\
-Shared : None\
+[1] OOP Summary
+Subject: Computer Science
+Owner  : ali
+Shared : None
 Content:
-Inheritance allows a class to derive from another.\
-Polymorphism lets one interface represent many types.\
+Inheritance allows a class to derive from another.
+Polymorphism lets one interface represent many types.
 
-[2] Math Formulas\
-Subject: Mathematics\
-Owner  : ali\
-Shared : None\
+[2] Math Formulas
+Subject: Mathematics
+Owner  : ali
+Shared : None
 Content:
-Quadratic formula: x = (-b +- sqrt(b2-4ac)) / 2a\
+Quadratic formula: x = (-b +- sqrt(b2-4ac)) / 2a
 ### use case 2 (manages todo list):
-Enter 1 to login and 0 to signup: 0\
-Enter Username: sara\
-Enter Password: sara456\
-====Account Created Successfully=====\
+Enter 1 to login and 0 to signup: 0
+Enter Username: sara
+Enter Password: sara456
+====Account Created Successfully====
 
-Enter Username: sara\
-Enter Password: sara456\
-Login Successful!\
-Loading ......\
-========WELCOME TO NOTIFY: sara=========\
+Enter Username: sara
+Enter Password: sara456
+Login Successful!
+Loading ......
+========WELCOME TO NOTIFY: sara=========
 
-Choice: 3   [TODO-LIST]\
+Choice: 3   [TODO-LIST]
 
-Choice: 1   [Add Task]\
-Task: Complete Biology lab report\
-Priority (low/medium/high): high\
-Task added!\
+Choice: 1   [Add Task]
+Task: Complete Biology lab report
+Priority (low/medium/high): high
+Task added!
 
-Choice: 1   [Add Task]\
-Task: Read Chapter 4\
-Priority (low/medium/high): medium\
-Task added!\
+Choice: 1   [Add Task]
+Task: Read Chapter 4
+Priority (low/medium/high): medium
+Task added!
 
-Choice: 1   [Add Task]\
-Task: Buy stationery\
-Priority (low/medium/high): low\
-Task added!\
-
-Choice: 2   [View All Tasks]\
+Choice: 1   [Add Task]
+Task: Buy stationery
+Priority (low/medium/high): low
+Task added!
+Choice: 2   [View All Tasks]
 --- Todo List ---
-[ ] [1] Complete Biology lab report (high)\
-[ ] [2] Read Chapter 4 (medium)\
-[ ] [3] Buy stationery (low)\
+[ ] [1] Complete Biology lab report (high)
+[ ] [2] Read Chapter 4 (medium)
+[ ] [3] Buy stationery (low)
 
-Choice: 5   [Mark Task Done/Undone]\
-Task ID: 1\
-Status changed.\
+Choice: 5   [Mark Task Done/Undone]
+Task ID: 1
+Status changed
 
-Choice: 4   [View Completed]\
---- Completed ---\
-[x] [1] Complete Biology lab report (high)\
+Choice: 4   [View Completed]
+--- Completed ---
+[x] [1] Complete Biology lab report (high)
 
-Choice: 3   [View Pending]\
---- Pending ---\
-[ ] [2] Read Chapter 4 (medium)\
+Choice: 3   [View Pending]
+--- Pending ---
+[ ] [2] Read Chapter 4 (medium)
 [ ] [3] Buy stationery (low)
 ### use case 3 (sends a friend request and messages ali):
-Enter 1 to login and 0 to signup: 0\
-Enter Username: omar\
-Enter Password: omar789\
-====Account Created Successfully=====\
+Enter 1 to login and 0 to signup: 0
+Enter Username: omar
+Enter Password: omar789
+====Account Created Successfully=====
 
-Enter Username: omar\
-Enter Password: omar789\
-Login Successful!\
-========WELCOME TO NOTIFY: omar=========\
+Enter Username: omar
+Enter Password: omar789
+Login Successful!
+========WELCOME TO NOTIFY: omar=========
 
-Choice: 4   [Social Networks]\
+Choice: 4   [Social Networks]
 
-Choice: 1   [Send Friend Request]\
-Available People:\
-ali\
-sara\
+Choice: 1   [Send Friend Request]
+Available People:
+ali
+sara
 
-Enter name of user to send friend request: ali\
-Request Sent\
+Enter name of user to send friend request: ali
+Request Sent
 
-[Omar exits. Ali logs in and accepts the request from his Social menu.]\
+[Omar exits. Ali logs in and accepts the request from his Social menu.]
 
-[Omar logs back in]\
-Enter 1 to login and 0 to signup: 1\
-Enter Username: omar\
-Enter Password: omar789\
-Login Successful!\
-========WELCOME TO NOTIFY: omar=========\
+[Omar logs back in]
+Enter 1 to login and 0 to signup: 1
+Enter Username: omar
+Enter Password: omar789
+Login Successful!
+========WELCOME TO NOTIFY: omar=========
 
-Choice: 4   [Social Networks]\
+Choice: 4   [Social Networks]
 
-Choice: 4   [Message a Friend]\
-=====Your Friends are=====\
-ali\
+Choice: 4   [Message a Friend]
+=====Your Friends are=====
+ali
 
-Write name of user to start conversation: ali\
+Write name of user to start conversation: ali
 
-========= Previous Messages ==========\
-[none yet]\
-============================\
+========= Previous Messages ==========
+[none yet]
+============================
 
-========== Send Message ========\
-Enter message (or 'exit' to quit): Hey Ali, can you share your OOP notes with me?\
+========== Send Message ========
+Enter message (or 'exit' to quit): Hey Ali, can you share your OOP notes with me?
 Message sent!
 ### use case 4 (reads a shared note via audiobook):
-Enter 1 to login and 0 to signup: 0\
-Enter Username: zara\
-Enter Password: zara321\
-====Account Created Successfully=====\
+Enter 1 to login and 0 to signup: 0
+Enter Username: zara
+Enter Password: zara321
+====Account Created Successfully=====
 
-Enter Username: zara\
-Enter Password: zara321\
-Login Successful!\
-========WELCOME TO NOTIFY: zara=========\
+Enter Username: zara
+Enter Password: zara321
+Login Successful!
+========WELCOME TO NOTIFY: zara========
 
-Choice: 1   [Making Notes]\\
+Choice: 1   [Making Notes]
 
-Choice: 2   [View All Notes]\
+Choice: 2   [View All Notes]
 
-[1] OOP Summary\
-Subject: Computer Science\
-Owner  : ali\
-Shared : zara\\
+[1] OOP Summary
+Subject: Computer Science
+Owner  : ali
+Shared : zara
 Content:
-Inheritance allows a class to derive from another.\
-Polymorphism lets one interface represent many types.\
+Inheritance allows a class to derive from another.
+Polymorphism lets one interface represent many types.
 
-Choice: 0   [Back to Main Menu]\
+Choice: 0   [Back to Main Menu]
 
-Choice: 2   [AudioBook]\
+Choice: 2   [AudioBook]
 
-Enter 1 for notes audio and 0 for exit: 1\
-Enter Notes id: 1\
+Enter 1 for notes audio and 0 for exit: 1
+Enter Notes id: 1
 
-[System speakers read aloud:]\
-"Inheritance allows a class to derive from another.\
-Polymorphism lets one interface represent many types."\
+[System speakers read aloud:]
+"Inheritance allows a class to derive from another.
+Polymorphism lets one interface represent many types."
 
 Enter 1 for notes audio and 0 for exit: 0
 ## Assumptions and limitations:
