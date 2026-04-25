@@ -10,12 +10,12 @@ Data is persisted locally via structured text files, organized per user in a ded
 including inheritance, polymorphism, encapsulation, static members, operator overloading, exception handling, and dynamic memory management.
 ## How to compile:
 Requirements: windows OS,g++ compiler (MinGW recommended), Powershell(for audiobook feature)\
-Compile command: g++ main.cpp login.cpp signUp.cpp note.cpp todo.cpp friend.cpp audiobook.cpp -o myProgram.exe\
+Compile command: ##g++ main.cpp login.cpp signUp.cpp note.cpp todo.cpp friend.cpp audiobook.cpp -o myProgram.exe\
 or compile all .cpp files at once: g++ *.cpp -o myProgram.exe -std=c++11\
 make sure all cpp and .h files are in same directory before compiling.
 ## How to run:
 open the terminal in the project directory.\
-Run the compiled executable: myProgram.exe\
+Run the compiled executable: ##myProgram.exe\
 The program must be run from the directory containing login.txt and users/ folder, or it will fail to read/write data correctly.
 ## How to use the system:
 Enter 1 to login and 0 to signup:
@@ -62,6 +62,8 @@ Note::operator== compares notes by ID.
 NoteList and TodoList use new/delete for pointer arrays.
 ###### File I/O:
 All data is persisted using ifstream/ofstream.
+###### Exception handling:
+is used to ensure proper sign up of user and creation of all required files like friend list messages, request list automatically when user sign in and if there is an error then exception handling will handle it
 ## Use case:
 Each user's data is isolated in their own users/<username>/ folder. The only shared resource is login.txt, which holds credentials for all registered accounts.
 ### use case 1 (signup and creates notes):
@@ -176,7 +178,7 @@ Enter name of user to send friend request: ali\
 Request Sent
 
 [Omar exits. Ali logs in and accepts the request from his Social menu.]
-
+As soon as request is accepted it will remove the name from request list and will add into friend list
 [Omar logs back in]\
 Enter 1 to login and 0 to signup: 1\
 Enter Username: omar\
@@ -234,6 +236,16 @@ Enter Notes id: 1
 Polymorphism lets one interface represent many types."\
 
 Enter 1 for notes audio and 0 for exit: 0
+###use case 5:(Through this it will tested if entering invalid password can login you account
+so enter Username:zara
+Password:!234
+Expected Output: Invalid Email or Password
+###Use case 6:(To check if duplicate names can be enter for username while signing in)
+I you alreay zara as username you can not use it again
+after running program Enter 0 to sign in Enter username and password
+Username: Zara Password: 123
+Expected output:"Username already exists"
+and it will again prompt you to write name;
 ## Assumptions and limitations:
 ##### Windows only:
 The application uses <dirent.h> (_mkdir),<dirent.h>, powerShell for TTS. it will not compile or run on linux/MacOS without significant changes.
@@ -243,5 +255,6 @@ Messages are stored as a plain text lines. there is no timestamp or threading.
 A single user can stop up to 100 notes and 100 tasks.
 ##### Audiobook requires PowerShell:
 The TTS feature calls system() with PowerShell command and will not work if PowerShell is unavailable or blocked.
+No pause,play, speed up speed down option available
 ##### No input validation on IDs:
 Entering a non integer where an ID is expected may cause undefined behavior.
