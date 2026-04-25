@@ -11,13 +11,13 @@ including inheritance, polymorphism, encapsulation, static members, operator ove
 ## How to compile:
 Requirements: windows OS,g++ compiler (MinGW recommended), Powershell(for audiobook feature)\
 Compile command: 
-##g++ main.cpp login.cpp signUp.cpp note.cpp todo.cpp friend.cpp audiobook.cpp -o myProgram.exe\
+## g++ main.cpp login.cpp signUp.cpp note.cpp todo.cpp friend.cpp audiobook.cpp -o myProgram.exe\
 or compile all .cpp files at once: g++ *.cpp -o myProgram.exe -std=c++11\
 make sure all cpp and .h files are in same directory before compiling.
 ## How to run:
 open the terminal in the project directory.\
 Run the compiled executable: 
-##myProgram.exe\
+## myProgram.exe\
 The program must be run from the directory containing login.txt and users/ folder, or it will fail to read/write data correctly.
 ## How to use the system:
 Enter 1 to login and 0 to signup:
