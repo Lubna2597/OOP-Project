@@ -17,7 +17,7 @@ make sure all cpp and .h files are in same directory before compiling.
 ## How to run:
 open the terminal in the project directory.\
 Run the compiled executable: 
-## myProgram.exe\
+## myProgram.exe
 The program must be run from the directory containing login.txt and users/ folder, or it will fail to read/write data correctly.
 ## How to use the system:
 Enter 1 to login and 0 to signup:
@@ -196,10 +196,10 @@ ali
 
 Write name of user to start conversation: ali
 
-========= Previous Messages ==========\
-[none yet]\
-============================
+=========previous messages========
+[not yet]\
 
+=================================
 ========== Send Message ========\
 Enter message (or 'exit' to quit): Hey Ali, can you share your OOP notes with me?\
 Message sent!
