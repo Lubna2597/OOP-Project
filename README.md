@@ -11,7 +11,7 @@ including inheritance, polymorphism, encapsulation, static members, operator ove
 ## How to compile:
 Requirements: windows OS,g++ compiler (MinGW recommended), Powershell(for audiobook feature)\
 Compile command: 
-## g++ main.cpp login.cpp signUp.cpp note.cpp todo.cpp friend.cpp audiobook.cpp -o myProgram.exe\
+#### g++ main.cpp login.cpp signUp.cpp note.cpp todo.cpp friend.cpp audiobook.cpp -o myProgram.exe\
 or compile all .cpp files at once: g++ *.cpp -o myProgram.exe -std=c++11\
 make sure all cpp and .h files are in same directory before compiling.
 ## How to run:
