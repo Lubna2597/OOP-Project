@@ -238,11 +238,11 @@ Enter Notes id: 1
 Polymorphism lets one interface represent many types."\
 
 Enter 1 for notes audio and 0 for exit: 0
-###use case 5:(Through this it will tested if entering invalid password can login you account
+### use case 5:(Through this it will tested if entering invalid password can login you account
 so enter Username:zara
 Password:!234
 Expected Output: Invalid Email or Password
-###Use case 6:(To check if duplicate names can be enter for username while signing in)
+### Use case 6:(To check if duplicate names can be enter for username while signing in)
 I you alreay zara as username you can not use it again
 after running program Enter 0 to sign in Enter username and password
 Username: Zara Password: 123
